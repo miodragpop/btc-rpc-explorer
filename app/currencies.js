@@ -4,6 +4,14 @@ global.currencyTypes = {
 		type:"native",
 		name:"BTC",
 		multiplier:1,
+		default:false,
+		decimalPlaces:8
+	},
+	"tha": {
+		id: "tha",
+		type:"native",
+		name:"THA",
+		multiplier:1,
 		default:true,
 		decimalPlaces:8
 	},
@@ -42,6 +50,7 @@ global.currencyTypes = {
 
 global.currencySymbols = {
 	"btc": "₿",
+	"tha": "THA",
 	"usd": "$",
 	"eur": "€",
 	"gbp": "£"

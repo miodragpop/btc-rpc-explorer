@@ -33,7 +33,7 @@ while (s3BucketPath.endsWith("/")) {
 const coins = require("./coins.js");
 const credentials = require("./credentials.js");
 
-const currentCoin = process.env.BTCEXP_COIN || "BTC";
+const currentCoin = process.env.BTCEXP_COIN || "THA";
 
 const rpcCred = credentials.rpc;
 
@@ -96,7 +96,7 @@ module.exports = {
 	coin: currentCoin,
 
 	displayDefaults: {
-		displayCurrency: (process.env.BTCEXP_DISPLAY_CURRENCY || "btc"),
+		displayCurrency: (process.env.BTCEXP_DISPLAY_CURRENCY || "tha"),
 		localCurrency: (process.env.BTCEXP_LOCAL_CURRENCY || "usd"),
 		theme: (process.env.BTCEXP_UI_THEME || "dark"),
 		timezone: (process.env.BTCEXP_UI_TIMEZONE || "local")

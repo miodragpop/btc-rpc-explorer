@@ -1053,7 +1053,9 @@ router.get("/block-height/:blockHeight", asyncHandler(async (req, res, next) => 
 
 
 		const result = await utils.timePromise("block-height.getBlockByHeight", async () => {
-			return await coreApi.getBlockByHeight(blockHeight);
+			const res = await coreApi.getBlockByHeight(blockHeight);
+			console.log("res",res);
+			return res;
 		}, perfResults);
 
 		res.locals.result.getblockbyheight = result;

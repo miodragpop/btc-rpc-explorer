@@ -1,9 +1,11 @@
 "use strict";
 
-const btc = require("./coins/btc.js");
+// const btc = require("./coins/btc.js");
+const tha = require("./coins/tha.js");
 
 module.exports = {
-	"BTC": btc,
+	// "BTC": btc,
+	"THA": tha,
 
-	"coins":["BTC"]
+	"coins":["THA"]
 };

@@ -3,7 +3,7 @@
 const Decimal = require("decimal.js");
 const Decimal8 = Decimal.clone({ precision:8, rounding:8 });
 
-const btcFun = require("./btcFun.js");
+const btcFun = require("./thaFun.js");
 
 const blockRewardEras = [ new Decimal8(50) ];
 for (let i = 1; i < 34; i++) {
@@ -12,14 +12,6 @@ for (let i = 1; i < 34; i++) {
 }
 
 const currencyUnits = [
-	{
-		type:"native",
-		name:"BTC",
-		multiplier:1,
-		default:false,
-		values:["", "btc", "BTC"],
-		decimalPlaces:8
-	},
 	{
 		type:"native",
 		name:"THA",
@@ -68,7 +60,7 @@ const currencyUnits = [
 ];
 
 module.exports = {
-	name:"Bitcoin",
+	name:"THA",
 	ticker:"THA",
 	logoUrlsByNetwork:{
 		"main":"./img/network-mainnet/logo.svg",
@@ -91,8 +83,8 @@ module.exports = {
 	siteTitlesByNetwork: {
 		"main":"THA Explorer",
 		"test":"THA Explorer",
-		"regtest":"Regtest Explorer",
-		"signet":"Signet Explorer",
+		"regtest":"THA Explorer",
+		"signet":"THA Explorer",
 	},
 	demoSiteUrlsByNetwork: {
 		"main": "https://bitcoinexplorer.org",
@@ -124,7 +116,7 @@ module.exports = {
 	targetBlockTimeSeconds: 600,
 	targetBlockTimeMinutes: 10,
 	currencyUnits:currencyUnits,
-	currencyUnitsByName:{"BTC":currencyUnits[0], "mBTC":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
+	currencyUnitsByName:{"THA":currencyUnits[0], "mBTC":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
 	baseCurrencyUnit:currencyUnits[3],
 	defaultCurrencyUnit:currencyUnits[0],
 	feeSatoshiPerByteBucketMaxima: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100, 150],
