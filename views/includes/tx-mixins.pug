@@ -96,7 +96,7 @@ mixin txIoDetails(tx, txInputs, totalIOValues, blockHeight, options={})
 									span(title="Coinbase transactions are special transactions created by the miner of a block. They distribute the block reward (subsidy) as the miner chooses, along with all of the fees paid by transactions included in the block.", data-bs-toggle="tooltip") coinbase
 								
 								.mt-2
-									+hexDataDisplay(txVin.coinbase)
+									//- +hexDataDisplay(txVin.coinbase)
 
 
 							else
@@ -257,14 +257,14 @@ mixin txIoDetails(tx, txInputs, totalIOValues, blockHeight, options={})
 											i.bi-box-arrow-up-right.ms-1
 
 								.my-2
-									+hexDataDisplay(vout.scriptPubKey.asm.substring("OP_RETURN ".length))
+									//- +hexDataDisplay(vout.scriptPubKey.asm.substring("OP_RETURN ".length))
 
 							else if (vout.scriptPubKey.asm && vout.scriptPubKey.asm.startsWith('OP_RETURN '))
 								span
 									+primaryBadge("OP_RETURN")
 
 								.my-2
-									+hexDataDisplay(vout.scriptPubKey.asm.substring("OP_RETURN ".length))
+									//- +hexDataDisplay(vout.scriptPubKey.asm.substring("OP_RETURN ".length))
 							
 							else if (vout.scriptPubKey.type)
 								span.d-none.d-sm-inline
@@ -297,7 +297,7 @@ mixin txIoDetails(tx, txInputs, totalIOValues, blockHeight, options={})
 						if (vout && vout.scriptPubKey.asm && !vout.scriptPubKey.asm.startsWith("OP_RETURN "))
 							if (voutAddresses.length == 0)
 								.my-2
-									+hexDataDisplay(vout.scriptPubKey.hex)
+									//- +hexDataDisplay(vout.scriptPubKey.hex)
 
 
 						if (voutAddresses.length > 0)
@@ -336,7 +336,7 @@ mixin txIoDetails(tx, txInputs, totalIOValues, blockHeight, options={})
 									span(title=`Output Type: ${utils.outputTypeName(vout.scriptPubKey.type)}`, data-bs-toggle="tooltip")
 										+darkBadge(utils.outputTypeAbbreviation(vout.scriptPubKey.type))
 
-								+hexDataDisplay(vout.scriptPubKey.asm)
+								//- +hexDataDisplay(vout.scriptPubKey.asm)
 
 
 					if (voutIndex < (tx.vout.length - 1) || nonZeroVoutValueCount > 1)
