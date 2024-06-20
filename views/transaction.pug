@@ -158,7 +158,7 @@ block content
 								else
 									- var feePaid = mempoolDetails ? new Decimal(mempoolDetails.entry.fees.base) : new Decimal(totalInputValue).minus(totalOutputValue);
 									
-									span #{utils.addThousandsSeparators(new DecimalRounded(feePaid).dividedBy(tx.vsize).times(100000000))}
+									span #{utils.addThousandsSeparators(new DecimalRounded(feePaid > 0 ? feePaid : 0).dividedBy(tx.vsize).times(100000000))}
 
 							+summaryItem("Total Fee")
 								if (!mempoolDetails && !global.txindexAvailable)

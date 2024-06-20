@@ -229,7 +229,7 @@ mixin txList(visibleTxs, txCount, limit, offset, inputsByTxid, options={})
 									span(data-bs-toggle="tooltip", title="Data truncated by performance settings. See transaction details for fee info.")
 										span.fw-light …
 
-							else if (txFee)
+							else if (txFee && txFee > 0)
 								+infoBadge
 									span.border-dotted.fw-bold.me-1(title="The miner fee (and fee rate) paid by this transaction. The fee equals the difference between the total input value and the total output value.", data-bs-toggle="tooltip") fee
 									+_valueDisplaySat(txFee, 1000)
